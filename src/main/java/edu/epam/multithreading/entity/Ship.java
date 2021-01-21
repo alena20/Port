@@ -12,7 +12,7 @@ import java.util.Optional;
 public class Ship extends Thread {
 
     private static final Logger logger = LogManager.getLogger(Ship.class);
-    private static final int INVALID_DOCK_ID = -1;
+    private static final int RESET_PIER_ID = -1;
     private final int shipId;
     private final int capacity;
     private int pierId;
@@ -23,14 +23,14 @@ public class Ship extends Thread {
         this.shipId = shipId;
         this.capacity = capacity;
         this.containers = containers;
-        pierId = INVALID_DOCK_ID;
+        pierId = RESET_PIER_ID;
         state = ArriveState.getInstance();
     }
 
     public Ship(int shipId, int capacity) {
         this.shipId = shipId;
         this.capacity = capacity;
-        pierId = INVALID_DOCK_ID;
+        pierId = RESET_PIER_ID;
         state = ArriveState.getInstance();
     }
 
@@ -59,7 +59,7 @@ public class Ship extends Thread {
     }
 
     public void resetPierId() {
-        pierId = INVALID_DOCK_ID;
+        pierId = RESET_PIER_ID;
     }
 
     public int getSize() {

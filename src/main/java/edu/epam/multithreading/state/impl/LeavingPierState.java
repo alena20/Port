@@ -39,15 +39,15 @@ public class LeavingPierState implements IState {
 
     @Override
     public void leavePier(Ship ship) {
-        logger.info("Ship {} is leaving dock № {}", ship.getShipId(), ship.getPierId());
-        int dockId = ship.getPierId();
+        logger.info("Ship {} is leaving pier № {}", ship.getShipId(), ship.getPierId());
+        int pierId = ship.getPierId();
         try {
             TimeUnit.SECONDS.sleep(LEAVING_DURATION);
         } catch (InterruptedException e) {
             logger.error(e);
         }
-        logger.info("Ship {} has left dock № {}!", ship.getShipId(), ship.getPierId());
-        PORT.leavePier(dockId);
+        logger.info("Ship {} has left pier number {}!", ship.getShipId(), ship.getPierId());
+        PORT.leavePier(pierId);
     }
 
     @Override

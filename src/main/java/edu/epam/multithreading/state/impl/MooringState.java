@@ -31,7 +31,7 @@ public class MooringState implements IState {
 
     @Override
     public void requestPier(Ship ship) {
-        logger.error("Invalid action, ship {}: dock was already requested!", ship.getShipId());
+        logger.error("Invalid action, ship {}: pier was already requested!", ship.getShipId());
     }
 
     @Override
@@ -41,7 +41,7 @@ public class MooringState implements IState {
 
     @Override
     public void moorToPier(Ship ship) {
-        logger.info("Ship {} is mooring to dock № {}", ship.getShipId(), ship.getPierId());
+        logger.info("Ship {} is mooring to pier № {}", ship.getShipId(), ship.getPierId());
         try {
             TimeUnit.SECONDS.sleep(MOORING_DURATION);
         } catch (InterruptedException e) {

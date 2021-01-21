@@ -64,7 +64,7 @@ public class LoadState implements IState {
 
     @Override
     public void requestPier(Ship ship) {
-        logger.error("Dock was already requested!");
+        logger.error("Pier was already requested!");
     }
 
     @Override
