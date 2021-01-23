@@ -1,7 +1,7 @@
 package edu.epam.multithreading.entity;
 
-import edu.epam.multithreading.state.IState;
-import edu.epam.multithreading.state.impl.ArriveState;
+import edu.epam.multithreading.entity.state.AbstractState;
+import edu.epam.multithreading.entity.state.impl.ArriveState;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +17,7 @@ public class Ship extends Thread {
     private final int capacity;
     private int pierId;
     private List<Container> containers = new ArrayList<>();
-    private IState state;
+    private AbstractState state;
 
     public Ship(int shipId, int capacity, List<Container> containers) {
         this.shipId = shipId;
@@ -34,11 +34,11 @@ public class Ship extends Thread {
         state = ArriveState.getInstance();
     }
 
-    public Object getCurrentState() {
+    public AbstractState getCurrentState() {
         return state;
     }
 
-    public void setCurrentState(IState currentState) {
+    public void setCurrentState(AbstractState currentState) {
         this.state = currentState;
     }
 

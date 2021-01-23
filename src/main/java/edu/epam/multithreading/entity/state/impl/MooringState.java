@@ -1,13 +1,13 @@
-package edu.epam.multithreading.state.impl;
+package edu.epam.multithreading.entity.state.impl;
 
 import edu.epam.multithreading.entity.Ship;
-import edu.epam.multithreading.state.IState;
+import edu.epam.multithreading.entity.state.AbstractState;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
-public class MooringState implements IState {
+public class MooringState implements AbstractState {
     private static final Logger logger = LogManager.getLogger(MooringState.class);
     private static final MooringState INSTANCE = new MooringState();
     private static final int MOORING_DURATION = 4;

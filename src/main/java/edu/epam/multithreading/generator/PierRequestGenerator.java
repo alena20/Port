@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class PierRequestGenerator {
-    private static final Logger LOGGER = LogManager.getLogger(PierRequestGenerator.class);
+    private static final Logger logger = LogManager.getLogger(PierRequestGenerator.class);
     private static final int DURATION = 2;
     private static final long MIN_DURATION = 1;
 
@@ -19,7 +19,7 @@ public class PierRequestGenerator {
                 long duration = new Random().nextInt(DURATION) + MIN_DURATION;
                 TimeUnit.SECONDS.sleep(duration);
             } catch (InterruptedException e) {
-                LOGGER.error(e);
+                logger.error(e);
             }
             ship.start();
         }

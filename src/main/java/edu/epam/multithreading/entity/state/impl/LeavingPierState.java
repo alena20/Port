@@ -1,14 +1,14 @@
-package edu.epam.multithreading.state.impl;
+package edu.epam.multithreading.entity.state.impl;
 
 import edu.epam.multithreading.entity.Port;
 import edu.epam.multithreading.entity.Ship;
-import edu.epam.multithreading.state.IState;
+import edu.epam.multithreading.entity.state.AbstractState;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
-public class LeavingPierState implements IState {
+public class LeavingPierState implements AbstractState {
 
     private static final Logger logger = LogManager.getLogger(LeavingPierState.class);
     private static final LeavingPierState INSTANCE = new LeavingPierState();

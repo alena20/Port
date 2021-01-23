@@ -1,9 +1,8 @@
-package edu.epam.multithreading.state;
+package edu.epam.multithreading.entity.state;
 
 import edu.epam.multithreading.entity.Ship;
 
-public interface IState {
-
+public interface AbstractState {
     void moorToPier(Ship ship);
 
     void unloadContainers(Ship ship);

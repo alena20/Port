@@ -1,16 +1,16 @@
-package edu.epam.multithreading.state.impl;
+package edu.epam.multithreading.entity.state.impl;
 
 import edu.epam.multithreading.entity.Container;
 import edu.epam.multithreading.entity.Port;
 import edu.epam.multithreading.entity.Ship;
-import edu.epam.multithreading.state.IState;
+import edu.epam.multithreading.entity.state.AbstractState;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-public class LoadState implements IState {
+public class LoadState implements AbstractState {
 
     private static final Logger logger = LogManager.getLogger(LoadState.class);
     private static final LoadState INSTANCE = new LoadState();
@@ -37,7 +37,7 @@ public class LoadState implements IState {
                 try {
                     TimeUnit.SECONDS.sleep(LOAD_DURATION);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    logger.error(e);
                 }
             }
         }
@@ -56,7 +56,7 @@ public class LoadState implements IState {
                 try {
                     TimeUnit.SECONDS.sleep(LOAD_DURATION);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    logger.error(e);
                 }
             }
         }

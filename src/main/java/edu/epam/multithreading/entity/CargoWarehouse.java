@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class CargoWarehouse {
 
-    private static final Logger LOGGER = LogManager.getLogger(CargoWarehouse.class);
+    private static final Logger logger = LogManager.getLogger(CargoWarehouse.class);
     private static final int MAX_CAPACITY = 20;
     private static final CargoWarehouse INSTANCE = new CargoWarehouse();
     private final List<Container> containers = new ArrayList<>();
@@ -30,7 +30,7 @@ public class CargoWarehouse {
         if (containers.size() < MAX_CAPACITY) {
             containers.add(container);
         } else {
-            LOGGER.warn("Unable to add container, warehouse is full!");
+            logger.error("Unable to add container, warehouse is full!");
         }
     }
 

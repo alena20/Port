@@ -1,13 +1,13 @@
-package edu.epam.multithreading.state.impl;
+package edu.epam.multithreading.entity.state.impl;
 
 import edu.epam.multithreading.entity.Port;
 import edu.epam.multithreading.entity.Ship;
-import edu.epam.multithreading.state.IState;
+import edu.epam.multithreading.entity.state.AbstractState;
 import edu.epam.multithreading.exception.ResourceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArriveState implements IState {
+public class ArriveState implements AbstractState {
     private static final Logger logger = LogManager.getLogger(ArriveState.class);
     private static final ArriveState INSTANCE = new ArriveState();
     private static final Port PORT = Port.getInstance();
